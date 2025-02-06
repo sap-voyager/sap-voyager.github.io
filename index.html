@@ -151,28 +151,71 @@
         left: 50%;
         transform: translateX(-50%);
       }    
+
+/* Layout adjustments */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  /* Main content takes more space */
+  main {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  /* Video container styles */
+  .video-container {
+    right: 10px;
+    top: 330px;
+    width: 400px; /* Adjust width as needed */
+    height: 300px;
+    flex-shrink: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    .video-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  
   </style>
 </head>
 <body>
   <!-- Fixed Left Sidebar Navigation -->
   <aside>
     <nav>
-        <a href="#about">SAP-Voyager</a>
+        <a href="#head">SAP-Voyager</a>
         <a href="#about">About</a>
       <a href="#features">Features</a>
       <a href="#architecture">Architecture</a>
       <a href="#ai-agent-framework">AI Agent Framework</a>
       <a href="#contact">Contact</a>
     </nav>
-    <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/logo.png" alt="SAPVoyager Logo" class="sidebar-logo">
+    <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/Screenshot%202025-02-07%20032240.png" alt="SAPVoyager Logo" class="sidebar-logo">
   </aside>
 
   <!-- Main Content Area -->
   <div>
-    <header>
-      <h1>SAP - Voyager</h1>
-      <p>AI Agentic RPA on SAP</p>
-    </header>
+    <section id="head">
+        <header>
+            <h1>SAP - Voyager</h1>
+            <p>AI Agentic RPA on SAP</p>
+          </header>
+    </section>
 
     <main>
       <!-- About Section -->
@@ -197,7 +240,16 @@
         </p>
         <a class="cta-button" href="https://github.com/sap-voyager/sap-voyager.github.io/blob/main/README.md">Get Started</a>
       </section>
-
+      <aside class="video-container">
+        <iframe 
+          width="350" 
+          height="250" 
+          src="https://www.youtube.com/embed/ixU4vshN3QU?autoplay=1" 
+          title="SAPVoyager Demo Video" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+    </aside>        
       <!-- Architecture Section -->
       <section id="architecture">
         <h2>Architecture</h2>
@@ -244,9 +296,9 @@
           Interested in learning more about SAPVoyager or scheduling a demo? Get in touch with our team!
         </p>
         <p class="content">
-          Email: <a href="mailto:sapvoyager@gmail.com">sapvoyager@gmail.com</a><br>
-          Youtube: <a href="https://www.youtube.com/@sapvoyager">youtube.com/@sapvoyager</a><br>
-          Website: <a href="https://sapvoyager.com" target="_blank">sapvoyager.com</a>
+            Email: <a href="mailto:sapvoyager@gmail.com">sapvoyager@gmail.com</a><br>
+            Youtube: <a href="https://www.youtube.com/@sapvoyager">youtube.com/@sapvoyager</a><br>
+            Website: <a href="https://sapvoyager.com" target="_blank">sapvoyager.com</a>
         </p>
       </section>
     </main>
