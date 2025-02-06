@@ -21,18 +21,6 @@
       margin-left: 220px;
     }
 
-    header {
-      background: #004d99;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
     /* Fixed Left Sidebar Navigation */
     aside {
       position: fixed;
@@ -61,6 +49,54 @@
 
     aside nav a:hover {
       color: #aaccff;
+    }
+
+    /* Main Container */
+    .content-container {
+      /* Ensure the main container takes up the remaining width */
+      margin-left: 220px;
+    }
+
+    header {
+      background: #004d99;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* Banner Section */
+    #banner {
+      position: relative;
+      background: url("https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sap_voyager.png") center/cover no-repeat;
+      background-attachment: fixed; /* Makes the banner unscrollable */
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #banner .banner-text {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.5); /* Optional: adds a translucent overlay for better text contrast */
+      padding: 20px;
+      border-radius: 10px;
+    }
+    #banner h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    #banner p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     main {
@@ -155,12 +191,20 @@
     </nav>
   </aside>
 
-  <!-- Main Content Area -->
-  <div>
+  <!-- Main Content Container -->
+  <div class="content-container">
     <header>
       <h1>SAPVoyager</h1>
       <p>AI Agentic RPA on SAP</p>
     </header>
+
+    <!-- Banner Section -->
+    <section id="banner">
+      <div class="banner-text">
+        <h2>SAPVoyager</h2>
+        <p>Revolutionize your SAP experience with intelligent, text-driven automation powered by Generative AI.</p>
+      </div>
+    </section>
 
     <main>
       <!-- About Section -->
