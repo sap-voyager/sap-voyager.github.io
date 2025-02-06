@@ -141,24 +141,36 @@
         margin: 5px 10px;
       }
     }
+    .sidebar-logo {
+        display: block;
+        width: 100%; /* Adjust size as needed */
+        max-width: 150px; /* Prevents oversized images */
+        margin: 20px auto 0; /* Centers the logo at the bottom */
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }    
   </style>
 </head>
 <body>
   <!-- Fixed Left Sidebar Navigation -->
   <aside>
     <nav>
-      <a href="#about">About</a>
+        <a href="#about">SAP-Voyager</a>
+        <a href="#about">About</a>
       <a href="#features">Features</a>
       <a href="#architecture">Architecture</a>
       <a href="#ai-agent-framework">AI Agent Framework</a>
       <a href="#contact">Contact</a>
     </nav>
+    <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/logo.png" alt="SAPVoyager Logo" class="sidebar-logo">
   </aside>
 
   <!-- Main Content Area -->
   <div>
     <header>
-      <h1>SAPVoyager</h1>
+      <h1>SAP - Voyager</h1>
       <p>AI Agentic RPA on SAP</p>
     </header>
 
@@ -183,7 +195,7 @@
           <strong>Voice-Activated Automation:</strong> Start automation via Alexa voice commands or MS Teams chat input.<br>
           <strong>Seamless SAP Integration:</strong> Easily integrates with your existing SAP systems.
         </p>
-        <a class="cta-button" href="#contact">Get Started</a>
+        <a class="cta-button" href="https://github.com/sap-voyager/sap-voyager.github.io/blob/main/README.md">Get Started</a>
       </section>
 
       <!-- Architecture Section -->
