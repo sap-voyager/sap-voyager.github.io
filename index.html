@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAPVoyager - AI Agentic RPA on SAP</title>
   <style>
-    /* Reset some default browser styles */
+    /* Reset default browser styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       background: #f5f7fa;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      /* Add left margin equal to the sidebar width */
+      margin-left: 220px;
     }
 
     header {
@@ -33,25 +32,24 @@
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
-    
-    .container {
-      display: flex;
-      flex: 1;
-    }
-    
-    /* Sidebar Navigation */
+
+    /* Fixed Left Sidebar Navigation */
     aside {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
       width: 220px;
       background: #003366;
       padding: 20px;
-      min-height: 100%;
+      overflow-y: auto; /* Allows scrolling within sidebar if content overflows */
     }
-    
+
     aside nav {
       display: flex;
       flex-direction: column;
     }
-    
+
     aside nav a {
       color: #fff;
       text-decoration: none;
@@ -60,22 +58,21 @@
       font-size: 1.1rem;
       transition: color 0.3s;
     }
-    
+
     aside nav a:hover {
       color: #aaccff;
     }
-    
+
     main {
-      flex: 1;
       padding: 40px 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
-    
+
     section {
       margin-bottom: 40px;
     }
-    
+
     section h2 {
       color: #004d99;
       margin-bottom: 15px;
@@ -84,13 +81,13 @@
       display: inline-block;
       padding-bottom: 5px;
     }
-    
+
     .content {
       font-size: 1.1rem;
       line-height: 1.8;
       margin-top: 15px;
     }
-    
+
     .cta-button {
       display: inline-block;
       background: #004d99;
@@ -101,38 +98,44 @@
       margin-top: 20px;
       transition: background 0.3s ease;
     }
-    
+
     .cta-button:hover {
       background: #003366;
     }
-    
+
     footer {
       background: #333;
       color: #fff;
       text-align: center;
       padding: 15px 0;
     }
-    
+
     /* Responsive image styling */
-    .architecture-img, .agent-framework-img {
+    .architecture-img,
+    .agent-framework-img {
       max-width: 100%;
       height: auto;
       margin-top: 20px;
       border: 1px solid #ddd;
       border-radius: 5px;
     }
-    
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
       }
-      /* For smaller screens, stack sidebar and content */
-      .container {
-        flex-direction: column;
-      }
+      /* For smaller screens, make the sidebar static on top */
       aside {
+        position: static;
         width: 100%;
-        text-align: center;
+        padding: 10px;
+      }
+      body {
+        margin-left: 0;
+      }
+      aside nav {
+        flex-direction: row;
+        justify-content: space-around;
       }
       aside nav a {
         margin: 5px 10px;
@@ -141,24 +144,24 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>SAPVoyager</h1>
-    <p>AI Agentic RPA on SAP</p>
-  </header>
+  <!-- Fixed Left Sidebar Navigation -->
+  <aside>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#ai-agent-framework">AI Agent Framework</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
 
-  <div class="container">
-    <!-- Left Sidebar Navigation -->
-    <aside>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#ai-agent-framework">AI Agent Framework</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </aside>
+  <!-- Main Content Area -->
+  <div>
+    <header>
+      <h1>SAPVoyager</h1>
+      <p>AI Agentic RPA on SAP</p>
+    </header>
 
-    <!-- Main Content -->
     <main>
       <!-- About Section -->
       <section id="about">
@@ -234,10 +237,10 @@
         </p>
       </section>
     </main>
-  </div>
 
-  <footer>
-    <p>&copy; 2025 SAPVoyager. All Rights Reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 SAPVoyager. All Rights Reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
