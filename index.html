@@ -11,7 +11,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
@@ -20,7 +20,7 @@
       /* Add left margin equal to the sidebar width */
       margin-left: 220px;
     }
-
+    
     /* Fixed Left Sidebar Navigation */
     aside {
       position: fixed;
@@ -30,14 +30,14 @@
       width: 220px;
       background: #003366;
       padding: 20px;
-      overflow-y: auto; /* Allows scrolling within sidebar if content overflows */
+      overflow-y: auto;
     }
-
+    
     aside nav {
       display: flex;
       flex-direction: column;
     }
-
+    
     aside nav a {
       color: #fff;
       text-decoration: none;
@@ -46,69 +46,58 @@
       font-size: 1.1rem;
       transition: color 0.3s;
     }
-
+    
     aside nav a:hover {
       color: #aaccff;
     }
-
+    
     /* Main Container */
     .content-container {
-      /* Ensure the main container takes up the remaining width */
       margin-left: 220px;
     }
-
+    
+    /* Banner Section */
+    #banner {
+      position: fixed;
+      top: 0;
+      left: 220px; /* aligns with the main content area */
+      width: calc(100% - 220px);
+      height: 300px; /* adjust the height as needed */
+      z-index: 1;
+    }
+    
+    #banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Push the header below the fixed banner */
     header {
       background: #004d99;
       color: #fff;
       padding: 20px;
       text-align: center;
+      margin-top: 300px;
     }
-
+    
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
-
-    /* Banner Section */
-    #banner {
-      position: relative;
-      background: url("https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sap_voyager.png") center/cover no-repeat;
-      background-attachment: fixed; /* Makes the banner unscrollable */
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #banner .banner-text {
-      position: relative;
-      z-index: 2;
-      background: rgba(0, 0, 0, 0.5); /* Optional: adds a translucent overlay for better text contrast */
-      padding: 20px;
-      border-radius: 10px;
-    }
-    #banner h2 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    #banner p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
+    
     main {
       padding: 40px 20px;
       max-width: 1000px;
       margin: 0 auto;
+      /* Add extra top margin so content starts below the fixed banner and header */
+      margin-top: 20px;
     }
-
+    
     section {
       margin-bottom: 40px;
     }
-
+    
     section h2 {
       color: #004d99;
       margin-bottom: 15px;
@@ -117,13 +106,13 @@
       display: inline-block;
       padding-bottom: 5px;
     }
-
+    
     .content {
       font-size: 1.1rem;
       line-height: 1.8;
       margin-top: 15px;
     }
-
+    
     .cta-button {
       display: inline-block;
       background: #004d99;
@@ -134,19 +123,18 @@
       margin-top: 20px;
       transition: background 0.3s ease;
     }
-
+    
     .cta-button:hover {
       background: #003366;
     }
-
+    
     footer {
       background: #333;
       color: #fff;
       text-align: center;
       padding: 15px 0;
     }
-
-    /* Responsive image styling */
+    
     .architecture-img,
     .agent-framework-img {
       max-width: 100%;
@@ -155,12 +143,11 @@
       border: 1px solid #ddd;
       border-radius: 5px;
     }
-
+    
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
       }
-      /* For smaller screens, make the sidebar static on top */
       aside {
         position: static;
         width: 100%;
@@ -176,6 +163,15 @@
       aside nav a {
         margin: 5px 10px;
       }
+      #banner {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+      #banner img {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -190,22 +186,19 @@
       <a href="#contact">Contact</a>
     </nav>
   </aside>
-
+  
+  <!-- Fixed Banner Section -->
+  <section id="banner">
+    <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sap_voyager.png" alt="SAPVoyager Banner">
+  </section>
+  
   <!-- Main Content Container -->
   <div class="content-container">
     <header>
       <h1>SAPVoyager</h1>
       <p>AI Agentic RPA on SAP</p>
     </header>
-
-    <!-- Banner Section -->
-    <section id="banner">
-      <div class="banner-text">
-        <h2>SAPVoyager</h2>
-        <p>Revolutionize your SAP experience with intelligent, text-driven automation powered by Generative AI.</p>
-      </div>
-    </section>
-
+  
     <main>
       <!-- About Section -->
       <section id="about">
@@ -216,7 +209,7 @@
           solutions like UIPath and SAP Build RPA. Experience a new era of intelligent, text-driven automation with SAPVoyager.
         </p>
       </section>
-
+  
       <!-- Features Section -->
       <section id="features">
         <h2>Features</h2>
@@ -229,7 +222,7 @@
         </p>
         <a class="cta-button" href="https://github.com/sap-voyager/sap-voyager.github.io/blob/main/README.md">Get Started</a>
       </section>
-
+  
       <!-- Architecture Section -->
       <section id="architecture">
         <h2>Architecture</h2>
@@ -249,7 +242,7 @@
         <!-- Architecture Image -->
         <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/AI-Agentic-RPA.gif" alt="SAPVoyager Architecture Diagram" class="architecture-img">
       </section>
-
+  
       <!-- AI Agent Framework Section -->
       <section id="ai-agent-framework">
         <h2>AI Agent Framework</h2>
@@ -268,7 +261,7 @@
         <!-- AI Agent Framework Image -->
         <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sapvoyager-AI-Agent-framework.gif" alt="SAPVoyager AI Agent Framework Diagram" class="agent-framework-img">
       </section>
-
+  
       <!-- Contact Section -->
       <section id="contact">
         <h2>Contact Us</h2>
@@ -276,12 +269,12 @@
           Interested in learning more about SAPVoyager or scheduling a demo? Get in touch with our team!
         </p>
         <p class="content">
-          Email: <a href="mailto:sapvoyager@gmail.com">sapvoyager@gmail.com</a><br>
-          SAP-Voyager Website: <a href="https://sapvoyager.com" target="_blank">sapvoyager.com</a>
+          Email: <a href="mailto:info@sapvoyager.com">info@sapvoyager.com</a><br>
+          Website: <a href="https://sapvoyager.com" target="_blank">sapvoyager.com</a>
         </p>
       </section>
     </main>
-
+  
     <footer>
       <p>&copy; 2025 SAPVoyager. All Rights Reserved.</p>
     </footer>
