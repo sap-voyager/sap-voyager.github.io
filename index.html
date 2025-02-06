@@ -11,42 +11,71 @@
       padding: 0;
       box-sizing: border-box;
     }
+    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       background: #f5f7fa;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
     header {
       background: #004d99;
       color: #fff;
-      padding: 20px 0;
+      padding: 20px;
       text-align: center;
     }
+
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
-    header p {
-      font-size: 1.2rem;
+    
+    .container {
+      display: flex;
+      flex: 1;
     }
-    nav {
-      margin-top: 15px;
+    
+    /* Sidebar Navigation */
+    aside {
+      width: 220px;
+      background: #003366;
+      padding: 20px;
+      min-height: 100%;
     }
-    nav a {
+    
+    aside nav {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    aside nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 10px 0;
       font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
     }
+    
+    aside nav a:hover {
+      color: #aaccff;
+    }
+    
     main {
+      flex: 1;
       padding: 40px 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
+    
     section {
       margin-bottom: 40px;
     }
+    
     section h2 {
       color: #004d99;
       margin-bottom: 15px;
@@ -55,11 +84,13 @@
       display: inline-block;
       padding-bottom: 5px;
     }
+    
     .content {
       font-size: 1.1rem;
       line-height: 1.8;
       margin-top: 15px;
     }
+    
     .cta-button {
       display: inline-block;
       background: #004d99;
@@ -70,15 +101,18 @@
       margin-top: 20px;
       transition: background 0.3s ease;
     }
+    
     .cta-button:hover {
       background: #003366;
     }
+    
     footer {
       background: #333;
       color: #fff;
       text-align: center;
       padding: 15px 0;
     }
+    
     /* Responsive image styling */
     .architecture-img, .agent-framework-img {
       max-width: 100%;
@@ -87,13 +121,21 @@
       border: 1px solid #ddd;
       border-radius: 5px;
     }
+    
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
       }
-      nav a {
-        display: block;
-        margin: 10px 0;
+      /* For smaller screens, stack sidebar and content */
+      .container {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+        text-align: center;
+      }
+      aside nav a {
+        margin: 5px 10px;
       }
     }
   </style>
@@ -102,90 +144,97 @@
   <header>
     <h1>SAPVoyager</h1>
     <p>AI Agentic RPA on SAP</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#ai-agent-framework">AI Agent Framework</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <main>
-    <!-- About Section -->
-    <section id="about">
-      <h2>About SAPVoyager</h2>
-      <p class="content">
-        Welcome to SAPVoyager, your cutting-edge AI agentic RPA solution designed specifically for SAP environments.
-        We leverage generative AI to create intelligent automation workflows that serve as a robust fallback to traditional
-        solutions like UIPath and SAP Build RPA. Experience a new era of intelligent, text-driven automation with SAPVoyager.
-      </p>
-    </section>
+  <div class="container">
+    <!-- Left Sidebar Navigation -->
+    <aside>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#ai-agent-framework">AI Agent Framework</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </aside>
 
-    <!-- Features Section -->
-    <section id="features">
-      <h2>Features</h2>
-      <p class="content">
-        <strong>Generative AI-Based Automation:</strong> Leverages state-of-the-art AI to generate automation workflows from text input.<br>
-        <strong>Fallback to Traditional RPA:</strong> Serves as a fallback from UIPath and SAP Build RPA processes.<br>
-        <strong>Text to RPA:</strong> Translates text-based commands directly into automated processes.<br>
-        <strong>Voice-Activated Automation:</strong> Start automation via Alexa voice commands or MS Teams chat input.<br>
-        <strong>Seamless SAP Integration:</strong> Easily integrates with your existing SAP systems.
-      </p>
-      <a class="cta-button" href="#contact">Get Started</a>
-    </section>
+    <!-- Main Content -->
+    <main>
+      <!-- About Section -->
+      <section id="about">
+        <h2>About SAPVoyager</h2>
+        <p class="content">
+          Welcome to SAPVoyager, your cutting-edge AI agentic RPA solution designed specifically for SAP environments.
+          We leverage generative AI to create intelligent automation workflows that serve as a robust fallback to traditional
+          solutions like UIPath and SAP Build RPA. Experience a new era of intelligent, text-driven automation with SAPVoyager.
+        </p>
+      </section>
 
-    <!-- Architecture Section -->
-    <section id="architecture">
-      <h2>Architecture</h2>
-      <p class="content">
-        SAPVoyager is engineered with a forward-thinking, generative AI approach to drive intelligent automation. Our architecture includes:
-      </p>
-      <ul class="content">
-        <li><strong>Agentic Framework:</strong> A self-directed, AI-driven framework that empowers autonomous decision-making for RPA tasks.</li>
-        <li><strong>Auto Correction Mechanism:</strong> Intelligent error detection and auto-correction features that ensure continuous process improvement.</li>
-        <li><strong>Multimodality with Vision AI:</strong> Integrates visual data processing to understand context, enabling dynamic adjustments and enhancements to automated workflows.</li>
-        <li><strong>AI Agent Planning:</strong> A pre-execution planning module that simulates and validates automation steps to optimize performance and accuracy.</li>
-        <li><strong>Python-Based Integration:</strong> Developed in Python for flexible integration and adoptability with platforms such as Azure Open AI, Gemini, and SAP Generative AI HUB.</li>
-      </ul>
-      <p class="content">
-        The diagram below illustrates the workflow and components of our architecture:
-      </p>
-      <!-- Architecture Image -->
-      <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/AI-Agentic-RPA.gif" alt="SAPVoyager Architecture Diagram" class="architecture-img">
-    </section>
+      <!-- Features Section -->
+      <section id="features">
+        <h2>Features</h2>
+        <p class="content">
+          <strong>Generative AI-Based Automation:</strong> Leverages state-of-the-art AI to generate automation workflows from text input.<br>
+          <strong>Fallback to Traditional RPA:</strong> Serves as a fallback from UIPath and SAP Build RPA processes.<br>
+          <strong>Text to RPA:</strong> Translates text-based commands directly into automated processes.<br>
+          <strong>Voice-Activated Automation:</strong> Start automation via Alexa voice commands or MS Teams chat input.<br>
+          <strong>Seamless SAP Integration:</strong> Easily integrates with your existing SAP systems.
+        </p>
+        <a class="cta-button" href="#contact">Get Started</a>
+      </section>
 
-    <!-- AI Agent Framework Section -->
-    <section id="ai-agent-framework">
-      <h2>AI Agent Framework</h2>
-      <p class="content">
-        The AI Agent Framework is the heart of SAPVoyager, enabling dynamic, self-improving automation. Key highlights include:
-      </p>
-      <ul class="content">
-        <li><strong>Autonomous Decision-Making:</strong> Agents independently analyze inputs and determine optimal automation strategies.</li>
-        <li><strong>Adaptive Learning:</strong> Continuous learning from interactions and process feedback to improve performance over time.</li>
-        <li><strong>Integrated Python Modules:</strong> Leverage Python-based libraries and frameworks to integrate seamlessly with major AI platforms.</li>
-        <li><strong>Platform Agnostic:</strong> Easily adoptable with Azure Open AI, Gemini, and SAP Generative AI HUB to suit diverse enterprise needs.</li>
-      </ul>
-      <p class="content">
-        The diagram below illustrates the AI Agent Framework in action:
-      </p>
-      <!-- AI Agent Framework Image -->
-      <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sapvoyager-AI-Agent-framework.gif" alt="SAPVoyager AI Agent Framework Diagram" class="agent-framework-img">
-    </section>
+      <!-- Architecture Section -->
+      <section id="architecture">
+        <h2>Architecture</h2>
+        <p class="content">
+          SAPVoyager is engineered with a forward-thinking, generative AI approach to drive intelligent automation. Our architecture includes:
+        </p>
+        <ul class="content">
+          <li><strong>Agentic Framework:</strong> A self-directed, AI-driven framework that empowers autonomous decision-making for RPA tasks.</li>
+          <li><strong>Auto Correction Mechanism:</strong> Intelligent error detection and auto-correction features that ensure continuous process improvement.</li>
+          <li><strong>Multimodality with Vision AI:</strong> Integrates visual data processing to understand context, enabling dynamic adjustments and enhancements to automated workflows.</li>
+          <li><strong>AI Agent Planning:</strong> A pre-execution planning module that simulates and validates automation steps to optimize performance and accuracy.</li>
+          <li><strong>Python-Based Integration:</strong> Developed in Python for flexible integration and adoptability with platforms such as Azure Open AI, Gemini, and SAP Generative AI HUB.</li>
+        </ul>
+        <p class="content">
+          The diagram below illustrates the workflow and components of our architecture:
+        </p>
+        <!-- Architecture Image -->
+        <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/AI-Agentic-RPA.gif" alt="SAPVoyager Architecture Diagram" class="architecture-img">
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p class="content">
-        Interested in learning more about SAPVoyager or scheduling a demo? Get in touch with our team!
-      </p>
-      <p class="content">
-        Email: <a href="mailto:sapvoyager@gmail.com">sapvoyager@gmail.com</a><br>
-        SAP Community Blog: <a href="https://sapvoyager.com" target="_blank">sapvoyager.com</a>
-      </p>
-    </section>
-  </main>
+      <!-- AI Agent Framework Section -->
+      <section id="ai-agent-framework">
+        <h2>AI Agent Framework</h2>
+        <p class="content">
+          The AI Agent Framework is the heart of SAPVoyager, enabling dynamic, self-improving automation. Key highlights include:
+        </p>
+        <ul class="content">
+          <li><strong>Autonomous Decision-Making:</strong> Agents independently analyze inputs and determine optimal automation strategies.</li>
+          <li><strong>Adaptive Learning:</strong> Continuous learning from interactions and process feedback to improve performance over time.</li>
+          <li><strong>Integrated Python Modules:</strong> Leverage Python-based libraries and frameworks to integrate seamlessly with major AI platforms.</li>
+          <li><strong>Platform Agnostic:</strong> Easily adoptable with Azure Open AI, Gemini, and SAP Generative AI HUB to suit diverse enterprise needs.</li>
+        </ul>
+        <p class="content">
+          The diagram below illustrates the AI Agent Framework in action:
+        </p>
+        <!-- AI Agent Framework Image -->
+        <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sapvoyager-AI-Agent-framework.gif" alt="SAPVoyager AI Agent Framework Diagram" class="agent-framework-img">
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p class="content">
+          Interested in learning more about SAPVoyager or scheduling a demo? Get in touch with our team!
+        </p>
+        <p class="content">
+          Email: <a href="mailto:info@sapvoyager.com">info@sapvoyager.com</a><br>
+          Website: <a href="https://sapvoyager.com" target="_blank">sapvoyager.com</a>
+        </p>
+      </section>
+    </main>
+  </div>
 
   <footer>
     <p>&copy; 2025 SAPVoyager. All Rights Reserved.</p>
