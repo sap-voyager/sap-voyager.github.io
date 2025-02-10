@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +43,8 @@
       width: 220px;
       background: #003366;
       padding: 20px;
-      overflow-y: auto; /* Allows scrolling within sidebar if content overflows */
+      overflow-y: auto;
+      /* Allows scrolling within sidebar if content overflows */
     }
 
     aside nav {
@@ -124,97 +126,115 @@
       header h1 {
         font-size: 2rem;
       }
+
       /* For smaller screens, make the sidebar static on top */
       aside {
         position: static;
         width: 100%;
         padding: 10px;
       }
+
       body {
         margin-left: 0;
       }
+
       aside nav {
         flex-direction: row;
         justify-content: space-around;
       }
+
       aside nav a {
         margin: 5px 10px;
       }
     }
-    .sidebar-logo {
-        display: block;
-        width: 100%; /* Adjust size as needed */
-        max-width: 150px; /* Prevents oversized images */
-        margin: 20px auto 0; /* Centers the logo at the bottom */
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-      }    
 
-/* Layout adjustments */
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  /* Main content takes more space */
-  main {
-    flex: 1;
-    padding-right: 20px;
-  }
-  
-  /* Video container styles */
-  .video-container {
-    right: 10px;
-    top: 330px;
-    width: 400px; /* Adjust width as needed */
-    height: 300px;
-    flex-shrink: 0;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 1024px) {
-    .content-wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
-    .video-container {
+    .sidebar-logo {
+      display: block;
       width: 100%;
+      /* Adjust size as needed */
+      max-width: 150px;
+      /* Prevents oversized images */
+      margin: 20px auto 0;
+      /* Centers the logo at the bottom */
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Layout adjustments */
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    /* Main content takes more space */
+    main {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    /* Video container styles */
+/*    .video-container {
+      right: 10px;
+      top: 330px;
+      width: 400px;
+      height: 300px;
+      flex-shrink: 0;
+    } */
+    .video-container {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
-    }
-    .video-container iframe {
-      width: 100%;
-      max-width: 500px;
-    }
+      gap: 20px; /* Adds space between the videos */
+      margin: 20px 0;
   }
-  
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .video-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .video-container iframe {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- Fixed Left Sidebar Navigation -->
   <aside>
     <nav>
-        <a href="#head">SAP-Voyager</a>
-        <a href="#about">About</a>
+      <a href="#head">SAP-Voyager</a>
+      <a href="#about">About</a>
       <a href="#features">Features</a>
       <a href="#architecture">Architecture</a>
       <a href="#ai-agent-framework">AI Agent Framework</a>
       <a href="#contact">Contact</a>
     </nav>
-    <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/Screenshot%202025-02-07%20032240.png" alt="SAPVoyager Logo" class="sidebar-logo">
+    <img
+      src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/Screenshot%202025-02-07%20032240.png"
+      alt="SAPVoyager Logo" class="sidebar-logo">
   </aside>
 
   <!-- Main Content Area -->
   <div>
     <section id="head">
-        <header>
-            <h1>SAP - Voyager</h1>
-            <p>AI Agentic RPA on SAP</p>
-          </header>
+      <header>
+        <h1>SAP - Voyager</h1>
+        <p>AI Agentic RPA on SAP</p>
+      </header>
     </section>
 
     <main>
@@ -223,70 +243,106 @@
         <h2>About SAPVoyager</h2>
         <p class="content">
           Welcome to SAPVoyager, your cutting-edge AI agentic RPA solution designed specifically for SAP environments.
-          We leverage generative AI to create intelligent automation workflows that serve as a robust fallback to traditional
-          solutions like UIPath and SAP Build RPA. Experience a new era of intelligent, text-driven automation with SAPVoyager.
+          We leverage generative AI to create intelligent automation workflows that serve as a robust fallback to
+          traditional
+          solutions like UIPath and SAP Build RPA. Experience a new era of intelligent, text-driven automation with
+          SAPVoyager.
         </p>
       </section>
-
-      <!-- Features Section -->
-      <section id="features">
-        <h2>Features</h2>
-        <p class="content">
-          <strong>Generative AI-Based Automation:</strong> Leverages state-of-the-art AI to generate automation workflows from text input.<br>
-          <strong>Fallback to Traditional RPA:</strong> Serves as a fallback from UIPath and SAP Build RPA processes.<br>
-          <strong>Text to RPA:</strong> Translates text-based commands directly into automated processes.<br>
-          <strong>Voice-Activated Automation:</strong> Start automation via Alexa voice commands or MS Teams chat input.<br>
-          <strong>Seamless SAP Integration:</strong> Easily integrates with your existing SAP systems.
-        </p>
-        <a class="cta-button" href="https://github.com/sap-voyager/sap-voyager.github.io/blob/main/README.md">Get Started</a>
-      </section>
-      <aside class="video-container">
-        <iframe 
-          width="350" 
-          height="250" 
+      <div class="video-container">
+        <iframe  width="350" height="250"
           src="https://www.youtube.com/embed/ixU4vshN3QU?autoplay=1" 
           title="SAPVoyager Demo Video" 
           frameborder="0" 
           allowfullscreen>
         </iframe>
-    </aside>        
+        <iframe  width="350" height="250"
+          src="https://www.youtube.com/embed/A3tHxlhotMQ?autoplay=1" 
+          title="SAPVoyager Demo Video" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>        
+      </div>
+      <!-- Features Section -->
+      <section id="features">
+        <h2>Features</h2>
+        <p class="content">
+          <strong>Generative AI-Based Automation:</strong> Leverages state-of-the-art AI to generate automation
+          workflows from text input.<br>
+          <strong>Fallback to Traditional RPA:</strong> Serves as a fallback from UIPath and SAP Build RPA
+          processes.<br>
+          <strong>Text to RPA:</strong> Translates text-based commands directly into automated processes.<br>
+          <strong>Voice-Activated Automation:</strong> Start automation via Alexa voice commands or MS Teams chat
+          input.<br>
+          <strong>Seamless SAP Integration:</strong> Easily integrates with your existing SAP systems.
+        </p>
+        <a class="cta-button" href="https://github.com/sap-voyager/sap-voyager.github.io/blob/main/README.md">Get
+          Started</a>
+      </section>
+      <!-- <aside class="video-container">
+        <iframe width="350" height="250" src="https://www.youtube.com/embed/ixU4vshN3QU?autoplay=1"
+          title="SAPVoyager Demo Video" frameborder="0" allowfullscreen>
+        </iframe>
+      </aside> -->
+      <!-- <div class="video-container">
+        <iframe  width="350" height="250"
+          src="https://www.youtube.com/embed/ixU4vshN3QU?autoplay=1" 
+          title="SAPVoyager Demo Video" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div> -->
       <!-- Architecture Section -->
       <section id="architecture">
         <h2>Architecture</h2>
         <p class="content">
-          SAPVoyager is engineered with a forward-thinking, generative AI approach to drive intelligent automation. Our architecture includes:
+          SAPVoyager is engineered with a forward-thinking, generative AI approach to drive intelligent automation. Our
+          architecture includes:
         </p>
         <ul class="content">
-          <li><strong>Agentic Framework:</strong> A self-directed, AI-driven framework that empowers autonomous decision-making for RPA tasks.</li>
-          <li><strong>Auto Correction Mechanism:</strong> Intelligent error detection and auto-correction features that ensure continuous process improvement.</li>
-          <li><strong>Multimodality with Vision AI:</strong> Integrates visual data processing to understand context, enabling dynamic adjustments and enhancements to automated workflows.</li>
-          <li><strong>AI Agent Planning:</strong> A pre-execution planning module that simulates and validates automation steps to optimize performance and accuracy.</li>
-          <li><strong>Python-Based Integration:</strong> Developed in Python for flexible integration and adoptability with platforms such as Azure Open AI, Gemini, and SAP Generative AI HUB.</li>
+          <li><strong>Agentic Framework:</strong> A self-directed, AI-driven framework that empowers autonomous
+            decision-making for RPA tasks.</li>
+          <li><strong>Auto Correction Mechanism:</strong> Intelligent error detection and auto-correction features that
+            ensure continuous process improvement.</li>
+          <li><strong>Multimodality with Vision AI:</strong> Integrates visual data processing to understand context,
+            enabling dynamic adjustments and enhancements to automated workflows.</li>
+          <li><strong>AI Agent Planning:</strong> A pre-execution planning module that simulates and validates
+            automation steps to optimize performance and accuracy.</li>
+          <li><strong>Python-Based Integration:</strong> Developed in Python for flexible integration and adoptability
+            with platforms such as Azure Open AI, Gemini, and SAP Generative AI HUB.</li>
         </ul>
         <p class="content">
           The diagram below illustrates the workflow and components of our architecture:
         </p>
         <!-- Architecture Image -->
-        <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/AI-Agentic-RPA.gif" alt="SAPVoyager Architecture Diagram" class="architecture-img">
+        <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/AI-Agentic-RPA.gif"
+          alt="SAPVoyager Architecture Diagram" class="architecture-img">
       </section>
 
       <!-- AI Agent Framework Section -->
       <section id="ai-agent-framework">
         <h2>AI Agent Framework</h2>
         <p class="content">
-          The AI Agent Framework is the heart of SAPVoyager, enabling dynamic, self-improving automation. Key highlights include:
+          The AI Agent Framework is the heart of SAPVoyager, enabling dynamic, self-improving automation. Key highlights
+          include:
         </p>
         <ul class="content">
-          <li><strong>Autonomous Decision-Making:</strong> Agents independently analyze inputs and determine optimal automation strategies.</li>
-          <li><strong>Adaptive Learning:</strong> Continuous learning from interactions and process feedback to improve performance over time.</li>
-          <li><strong>Integrated Python Modules:</strong> Leverage Python-based libraries and frameworks to integrate seamlessly with major AI platforms.</li>
-          <li><strong>Platform Agnostic:</strong> Easily adoptable with Azure Open AI, Gemini, and SAP Generative AI HUB to suit diverse enterprise needs.</li>
+          <li><strong>Autonomous Decision-Making:</strong> Agents independently analyze inputs and determine optimal
+            automation strategies.</li>
+          <li><strong>Adaptive Learning:</strong> Continuous learning from interactions and process feedback to improve
+            performance over time.</li>
+          <li><strong>Integrated Python Modules:</strong> Leverage Python-based libraries and frameworks to integrate
+            seamlessly with major AI platforms.</li>
+          <li><strong>Platform Agnostic:</strong> Easily adoptable with Azure Open AI, Gemini, and SAP Generative AI HUB
+            to suit diverse enterprise needs.</li>
         </ul>
         <p class="content">
           The diagram below illustrates the AI Agent Framework in action:
         </p>
         <!-- AI Agent Framework Image -->
-        <img src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sapvoyager-AI-Agent-framework.gif" alt="SAPVoyager AI Agent Framework Diagram" class="agent-framework-img">
+        <img
+          src="https://raw.githubusercontent.com/sap-voyager/sap-voyager.github.io/main/sapvoyager-AI-Agent-framework.gif"
+          alt="SAPVoyager AI Agent Framework Diagram" class="agent-framework-img">
       </section>
 
       <!-- Contact Section -->
@@ -296,9 +352,11 @@
           Interested in learning more about SAPVoyager or scheduling a demo? Get in touch with our team!
         </p>
         <p class="content">
-            Email: <a href="mailto:sapvoyager@gmail.com">sapvoyager@gmail.com</a><br>
-            Youtube: <a href="https://www.youtube.com/@sapvoyager">youtube.com/@sapvoyager</a><br>
-            SAP Blog: <a target="_blank"> Comming Soon</a>
+          Email: <a href="mailto:sapvoyager@gmail.com">sapvoyager@gmail.com</a><br>
+          Youtube: <a href="https://www.youtube.com/@sapvoyager">youtube.com/@sapvoyager</a><br>
+          SAP Blog: <a
+            href="https://community.sap.com/t5/artificial-intelligence-and-machine-learning/sap-voyager-how-openai-can-take-control-of-your-sap-gui/td-p/14009733">SAP-Voyager:
+            How OpenAI can take control of your SAP GUI</a>
         </p>
       </section>
     </main>
@@ -308,4 +366,5 @@
     </footer>
   </div>
 </body>
+
 </html>
